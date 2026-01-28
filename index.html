@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Flower Prediction API</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+
+      .subtitle {
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .api-section {
+        margin-top: 30px;
+      }
+
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+
+      .endpoint {
+        background: #eef2f7;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 10px;
+      }
+
+      code {
+        background: #333;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🌸 Iris Flower Classification API</h1>
+      <p class="subtitle">
+        Machine Learning API for predicting Iris flower species
+      </p>
+
+      <!-- Dataset Info -->
+      <div class="api-section">
+        <h2>🌸 Dataset Information</h2>
+
+        <p><strong>Features:</strong></p>
+        <ul>
+          {% for feature in feature_names %}
+          <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+
+        <p><strong>Target Classes:</strong></p>
+        <ul>
+          {% for target in target_names %}
+          <li>{{ target }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- API Endpoints -->
+      <div class="api-section">
+        <h2>🌸 API Endpoints</h2>
+
+        <div class="endpoint">
+          <p><strong>GET</strong> <code>/api/info</code></p>
+          <p>Returns dataset and model information.</p>
+        </div>
+
+        <div class="endpoint">
+          <p><strong>POST</strong> <code>/api/predict</code></p>
+          <p>Predicts the Iris species.</p>
+          <p><strong>Sample JSON:</strong></p>
+          <code> { "features": [5.1, 3.5, 1.4, 0.2] } </code>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
